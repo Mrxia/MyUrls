@@ -6,12 +6,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="icon" href="./favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stilleshan/dockerfiles/myurls/public/css/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mrxia/MyUrls/public/css/main.css" />
   <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
   <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
+  <!-- 插入的CSS代码 -->
+  <style type="text/css">
+    body {
+      background-image: url(https://tuapi.eees.cc/api.php?category=dongman&type=302); /* 图片类型更换请修改参数 */
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-position: 50% 50%;
+    }
+
+    /* 覆盖或扩展main.css中的.box样式 */
+    .box {
+      background-color: rgba(255, 255, 255, 0.5) !important; /* 白色背景，50%透明度 */
+      padding: 20px; /* 可选：增加内边距以改善视觉效果 */
+    }
+
+    /* 设置footer样式 */
+    #footer {
+      background-color: rgba(255, 255, 255, 0.2); /* 白色背景，20%透明度 */
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 可选：添加阴影效果 */
+    }
+  </style>
 </head>
 
 <body class="is-preload">
@@ -24,8 +50,8 @@
         <nav id="nav">
           <ul>
             <li><a href="/">首页</a></li>
-            <li><a href="https://sub.ops.ci" target="_blank">订阅转换</a></li>
-            <li><a href="https://github.com/stilleshan/dockerfiles/tree/main/myurls" target="_blank">GitHub</a></li>
+            <li><a href="https://subweb.dzkeji.xyz" target="_blank">订阅转换</a></li>
+            <li><a href="https://github.com/Mrxia/MyUrls" target="_blank">GitHub</a></li>
           </ul>
         </nav>
       </header>
@@ -34,7 +60,7 @@
       <section id="main" class="container medium">
         <header>
           <h2>MyUrls</h2>
-          <p>一个轻量级短链接服务</p>
+          <p>一个轻量级好用的短链接服务</p>
         </header>
         <div class="box">
           <form method="post" action="#">
@@ -71,7 +97,7 @@
   </div>
 
   <script>
-    const backend = 'https://s.ops.ci'
+    const backend = 'https://dzkeji.us.kg'
 
     let app = new Vue({
       el: "#app",
