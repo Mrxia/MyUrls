@@ -1,23 +1,22 @@
-version: "3"
 services:
   myurls:
-    build: .
-    container_name: myurls
-    restart: always
-    env_file: .env
-    ports:
-      - "${MYURLS_PORT}:${MYURLS_PORT}"
+    image: xiao6666/myurls:latest
+    environment:
+      - MYURLS_DOMAIN=s.example.com  #你的域名
+      - MYURLS_PROTO=https
+      - REDIS_IP=redis  #你的其他服务器部署了rides的话可以换成对应服务器ip
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD= #有就填，没有就空着
     volumes:
-      - ./data/myurls/logs:/app/logs      
+      - ./data/myurls/logs:/app/logs    
+    ports:
+      - "8080:8080"
     depends_on:
-      - myurls-redis
-    entrypoint: ["/app/myurls", "-domain", "${MYURLS_DOMAIN}", "-conn", myurls-redis:6379]
-
-  myurls-redis:
-    image: "redis:7"
-    container_name: myurls-redis
+      - redis
     restart: always
+
+  redis:
+    image: redis:latest
     volumes:
       - ./data/redis:/data
-    expose:
-      - "6379"
+    restart: always
